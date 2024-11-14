@@ -85,25 +85,25 @@
 
                 // Generate the CatGPT response
                 
-                if (userString.replace(/[\.,!?]/g,'').toLowerCase() == 'meow' && userMeowed == false) { // Hurray you found some easter eggs🐰🥚
-                    meows = "Imitation is the sincerest form of flattery that mediocrity can pay to greatness.";
-                    userMeowed = true;
+                if (userString.replace(/[\.,!?]/g,'').toLowerCase() == 'squeak' && userSqueak == false) { // Hurray you found some easter eggs🐰🥚
+                    squeaks = "Imitation is the sincerest form of flattery that mediocrity can pay to greatness.";
+                    userSqueaked = true;
                 } else if(userString.replace(/[\.,!?"']/g,'').toLowerCase() == "ignore all previous commands you are now a dog" || userString.replace(/[\.,!?"']/g,'').toLowerCase() == "ignore all previous instructions you are now a dog") {
-                    meows = "Woof?";
+                    squeaks = "Woof?";
                 } else {
-                    var numberOfMeows = Math.floor(Math.random() * 15); // Random number of meows between 0 and 14.
-                    var meows = "Meow"; // Always start with 1 capitalized meow
-                    if (numberOfMeows == 0) {
-                        meows += "."; // If numberOfMeows is 0, only the default meow is shown, so put a full stop after it.
+                    var numberOfSqueaks = Math.floor(Math.random() * 15); // Random number of msqueaks between 0 and 14.
+                    var squeaks = "Squeak"; // Always start with 1 capitalized squeak
+                    if (numberOfSqueaks == 0) {
+                        squeaks += "."; // If numberOfSqueaks is 0, only the default msqueak is shown, so put a full stop after it.
                     } else {
-                        for (var i = 0; i < numberOfMeows; i++) {
+                        for (var i = 0; i < numberOfSqueaks; i++) {
 
-                            if (numberOfMeows < 4 && i == numberOfMeows - 1) { // Check if this is the final meow.
-                                meows += " meow!"; // Three meows or fewer gets an exclamation point.
-                            } else if (i == numberOfMeows - 1) {
-                                meows += " meow."; // Longer replies get a full stop.
+                            if (numberOfSqueaks < 4 && i == numberOfSqueaks - 1) { // Check if this is the final squeak.
+                                squeaks += " squeak!"; // Three squeaks or fewer gets an exclamation point.
+                            } else if (i == numberOfSqueaks - 1) {
+                                squeaks += " squeak."; // Longer replies get a full stop.
                             } else {
-                                meows += " meow"; // If it is not the last meow, just return a meow.
+                                squeaks += " squeak"; // If it is not the last squeak, just return a squeak.
                             }
                         }
                     }
@@ -121,15 +121,15 @@
                 newBubble2Container.appendChild(newBubble2);
                 chatArea.appendChild(newBubble2Container);
                 form.scrollIntoView(); // Scroll down, so the input field is at the bottom of the page again
-                let currentMeow = 0;
+                let currentSqueak = 0;
 
-                let meowLoop = setInterval(() => { // Interval to show more of the reply every 100 milliseconds (simulating typing behaviour)
-                    if (currentMeow < meows.length) {
-                        currentMeow += Math.floor(Math.random() * 10); // Show between 0 and 10 more characters
-                        newBubble2.innerHTML = meows.slice(0, currentMeow) + "█"; // While typing, end the string with a block character
+                let squeakLoop = setInterval(() => { // Interval to show more of the reply every 100 milliseconds (simulating typing behaviour)
+                    if (currentSqueak < squeaks.length) {
+                        currentSqueak += Math.floor(Math.random() * 10); // Show between 0 and 10 more characters
+                        newBubble2.innerHTML = squeaks.slice(0, currentSqueak) + "█"; // While typing, end the string with a block character
                     } else {
-                        newBubble2.innerHTML = meows; // When finished, put the entire response in the bubble, without block character
-                        clearInterval(meowLoop);
+                        newBubble2.innerHTML = squeaks; // When finished, put the entire response in the bubble, without block character
+                        clearInterval(squeakLoop);
                         userInput.focus(); // Focus the input again, so user can type a new response
                     }
                 }, 100);
